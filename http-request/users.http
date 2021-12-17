@@ -1,0 +1,45 @@
+@endporint = http://127.0.0.1:3000
+@user_id = ed68a2be-e1f1-4e1e-8416-f158b3d15e9a
+
+### Get all User
+GET {{endporint}}/users
+Content-Type: application/json
+
+### Get User by id
+GET {{endporint}}/users/{{user_id}}
+Content-Type: application/json
+
+### Create User
+POST {{endporint}}/users
+Content-Type: application/json
+
+{
+    "email": "apirat14121ice@hotmail.com",
+    "password": "12345",
+    "full_name": "Apirat Premachana",
+    "phone": "0922567287",
+    "position": "backend developer2",
+    "bio": "-",
+    "profile_path": ""
+  }
+
+
+### Update User by Id
+
+PATCH   {{endporint}}/users/{{user_id}}
+Content-Type: application/json
+
+{
+    "id":"{{user_id}}",
+    "email": "apirat14121iceabc@hotmail.com",
+    "password": "12345",
+    "full_name": "Apirat131412 Noiaroon",
+    "phone": "0922567287",
+    "position": "HR",
+    "bio": "-",
+    "profile_path": ""
+  }
+
+### Delete user bu user_id
+DELETE {{endporint}}/users/{{user_id}}
+Content-Type: application/json
