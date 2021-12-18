@@ -5,6 +5,11 @@
     "username": "postgres",
     "password": "Ikool009?",
     "database": "kanban-board-db",
-    "entities": ["dist/**/*.entity{.ts,.js}"],
-    "synchronize": true
+    "entities": [
+        "dist/**/*.entity{.ts,.js}"
+    ],
+    "synchronize": true,
+    "subscribers": [
+        "dist/**/*.subscriber{.ts,.js}"
+    ]
 }

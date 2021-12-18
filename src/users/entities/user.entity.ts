@@ -1,12 +1,15 @@
 
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
-
+import { Entity, Column, Unique, PrimaryGeneratedColumn, OneToMany } from "typeorm"
+import { Project } from "../../project/entities/project.entity"
 @Entity()
 export class User {
+
+
     @PrimaryGeneratedColumn('uuid')
     id: string
 
     @Column()
+    @Unique(["email"])
     email: string
 
     @Column({ select: false })
@@ -27,6 +30,7 @@ export class User {
     @Column("text")
     profile_path: string;
 
-
+    @OneToMany(() => Project, project => project.user, { cascade: ['insert'] })
+    projects: Project[]
 
 }

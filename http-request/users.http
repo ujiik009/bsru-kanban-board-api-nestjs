@@ -32,7 +32,6 @@ Content-Type: application/json
 {
     "id":"{{user_id}}",
     "email": "apirat14121iceabc@hotmail.com",
-    "password": "12345",
     "full_name": "Apirat131412 Noiaroon",
     "phone": "0922567287",
     "position": "HR",
