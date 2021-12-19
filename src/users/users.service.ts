@@ -23,6 +23,12 @@ export class UsersService {
     return this.usersRepository.findOne(id)
   }
 
+  findByEmail(email: string): Promise<User> {
+    return this.usersRepository.findOne({
+      email: email
+    })
+  }
+
   async update(id: string, updateUserDto: UpdateUserDto) {
     return this.usersRepository.save(updateUserDto)
   }

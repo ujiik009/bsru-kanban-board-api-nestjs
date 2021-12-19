@@ -9,13 +9,15 @@ import { TaskModule } from './task/task.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
     ProjectModule,
     TaskModule,
-    UsersModule],
+    UsersModule,
+    AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
