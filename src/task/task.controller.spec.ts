@@ -5,11 +5,16 @@ import { TaskService } from './task.service';
 describe('TaskController', () => {
   let controller: TaskController;
 
+  var mockTaskService = {}
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [TaskController],
       providers: [TaskService],
-    }).compile();
+    })
+      .overrideProvider(TaskService)
+      .useValue(mockTaskService)
+      .compile();
 
     controller = module.get<TaskController>(TaskController);
   });

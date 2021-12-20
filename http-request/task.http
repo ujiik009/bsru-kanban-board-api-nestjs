@@ -1,0 +1,33 @@
+@endporint = http://127.0.0.1:3000
+@taskId = 34c84d46-7323-447d-b71b-dcc20381bc8d
+### Create Task
+POST {{endporint}}/task
+Content-Type: application/json
+
+{
+    "name":"Task testing",
+    "description":"-",
+    "state":"todo",
+    "color":"red",
+    "due_date":"2021-01-01",
+    "assign_to":"cecf2049-705d-4745-9d2c-9d4e0fcdcf99",
+    "project_id":"2403d371-c79f-4e03-a17b-7ef9a7741a30"
+}
+
+### Get Task item by task id
+GET {{endporint}}/task
+Content-Type: application/json
+
+{
+    "name":"Task testing",
+    "description":"-",
+    "state":"todo",
+    "color":"red",
+    "due_date":"2021-01-01",
+    "assign_to":"cecf2049-705d-4745-9d2c-9d4e0fcdcf99",
+    "project_id":"2403d371-c79f-4e03-a17b-7ef9a7741a30"
+}
+
+### List all task
+GET {{endporint}}/task/{{taskId}}
+Content-Type: application/json

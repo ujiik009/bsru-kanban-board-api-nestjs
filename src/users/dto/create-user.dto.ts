@@ -6,5 +6,5 @@ export class CreateUserDto {
     position: string;
     bio: string;
     profile_path: string;
-    projects: Array<any>;
+    projects?:  Array<any>;
 }

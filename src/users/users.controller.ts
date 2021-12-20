@@ -10,7 +10,7 @@ export class UsersController {
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
-  
+
     return this.usersService.create(createUserDto)
   }
 
@@ -23,6 +23,12 @@ export class UsersController {
   findOne(@Param('id') id: string) {
     return this.usersService.findOne(id);
   }
+
+  @Get('/tasks/:id')
+  findTasks(@Param('id') id: string) {
+    return this.usersService.tasks(id)
+  }
+
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {

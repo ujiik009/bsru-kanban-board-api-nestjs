@@ -1,5 +1,5 @@
 @endporint = http://127.0.0.1:3000
-@user_id = ed68a2be-e1f1-4e1e-8416-f158b3d15e9a
+@user_id = cecf2049-705d-4745-9d2c-9d4e0fcdcf99
 
 ### Get all User
 GET {{endporint}}/users
@@ -41,4 +41,9 @@ Content-Type: application/json
 
 ### Delete user bu user_id
 DELETE {{endporint}}/users/{{user_id}}
+Content-Type: application/json
+
+
+### List task of User
+GET {{endporint}}/users/tasks/{{user_id}}
 Content-Type: application/json

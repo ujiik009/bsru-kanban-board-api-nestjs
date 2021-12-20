@@ -1,6 +1,7 @@
 
 import { Entity, Column, Unique, PrimaryGeneratedColumn, OneToMany } from "typeorm"
 import { Project } from "../../project/entities/project.entity"
+import { Task } from './../../task/entities/task.entity';
 @Entity()
 export class User {
 
@@ -30,7 +31,10 @@ export class User {
     @Column("text")
     profile_path: string;
 
-    @OneToMany(() => Project, project => project.user, { cascade: ['insert'] })
-    projects: Project[]
+    @OneToMany(() => Project, project => project.user)
+    projects: Project[];
+
+    @OneToMany(() => Task, task => task.user)
+    tasks: Task[]
 
 }

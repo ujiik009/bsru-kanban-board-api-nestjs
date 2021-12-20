@@ -1,0 +1,20 @@
+@endporint = http://127.0.0.1:3000
+
+
+### Get All project
+GET {{endporint}}/project
+Content-Type: application/json
+
+
+### Create Project
+POST {{endporint}}/project
+Content-Type: application/json
+
+{
+    "name":"BSRU Project",
+    "description":"-",
+    "start_date":"2021-01-01",
+    "end_date":"2022-01-01",
+    "created_at":"2021-01-01 00:00:01",
+    "creator":"cecf2049-705d-4745-9d2c-9d4e0fcdcf99"
+}

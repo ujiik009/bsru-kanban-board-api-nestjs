@@ -4,6 +4,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
+import { Task } from 'src/task/entities/task.entity';
 @Injectable()
 export class UsersService {
   constructor(
@@ -35,5 +36,12 @@ export class UsersService {
 
   remove(id: string) {
     return this.usersRepository.delete({ id: id })
+  }
+
+  async tasks(id: string) : Promise<Array<Task>>{
+    var userItem = await this.usersRepository.findOne(id, {
+      relations: ["tasks"],
+    })
+    return userItem.tasks
   }
 }
